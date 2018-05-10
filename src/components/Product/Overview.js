@@ -50,8 +50,8 @@ class Overview extends Component {
               <TableCell>2</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell>Price</TableCell>
-              <TableCell>100.000 USD</TableCell>
+              <TableCell>Price/Rent</TableCell>
+              <TableCell>3.000.000.000/1.500.000 đ</TableCell>
             </TableRow>
           </TableBody>
         </Table>

@@ -12,6 +12,7 @@ import { fetchTitle, setHelmet } from '../../reducers/App/app';
 import './Product.css';
 import Overview from './Overview';
 import Amenity from './Amenity';
+import Map from './Map';
 
 class Product extends Component {
   constructor(props) {
@@ -29,14 +30,14 @@ class Product extends Component {
     }
   }
 
-  init = () => {
-    this.setState({ selectedSrc: 'images/aokhoac.jpg' });
-  };
   onMouseOver = (selectedSrc) => {
     this.setState({ selectedSrc });
   };
   onClick = (selectedSrc) => {
     this.setState({ selectedSrc });
+  };
+  init = () => {
+    this.setState({ selectedSrc: 'images/download.jpeg' });
   };
 
   render() {
@@ -57,7 +58,7 @@ class Product extends Component {
                 />
                 <CardActions className="productActions">
                   {
-                    ['images/aokhoac.jpg', 'images/clothes1.jpg', 'images/clothes2.jpg', 'images/clothes3.jpg'].map((src, index) => (
+                    ['images/download.jpeg', 'images/download1.jpeg', 'images/download2.jpeg'].map((src, index) => (
                       <IconButton
                         className={`productImage ${selectedSrc === src ? 'productImageHighlight' : 'abc'}`}
                         key={index}
@@ -82,27 +83,13 @@ class Product extends Component {
               <Amenity />
             </Grid>
             <Grid item md sm xs={12}>
-              <Paper elevation={2} className="productDetailPaper">
-                <Typography align="left" variant="headline" component="h3">
-                  DIMENSIONS (CM)
-                </Typography>
-                <Table className="productTable">
-                  <TableBody>
-                    <TableRow>
-                      <TableCell>Height</TableCell>
-                      <TableCell>156</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>Width</TableCell>
-                      <TableCell>80</TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell>Depth</TableCell>
-                      <TableCell>80</TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </Paper>
+              <Map
+                isMarkerShown
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `400px` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+              />
             </Grid>
             <Grid item md sm xs={12}>
               <Paper elevation={2} className="productDetailPaper">

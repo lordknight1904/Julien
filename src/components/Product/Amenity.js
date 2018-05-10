@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Paper from 'material-ui/Paper';
 import Typography from 'material-ui/Typography';
-import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
+import Grid from 'material-ui/Grid';
 import './Product.css';
 
 class Amenity extends Component {
@@ -15,18 +15,24 @@ class Amenity extends Component {
 
   render() {
     return (
-      <Paper className="productDetailPaper" elevation={ 2 }>
+      <Paper className="productDetailPaper" elevation={2}>
         <Typography align="left" variant="headline" component="h3">
-          Amenity
+          Amenities
         </Typography>
-        <Table className="productTable">
-          <TableBody>
-            <TableRow>
-              <TableCell>Image</TableCell>
-              <TableCell>Internet</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <Grid className="productDetailGrid" container spacing={16}>
+          <Grid item md sm xs>
+            image
+          </Grid>
+          <Grid item md sm xs>
+            Internet
+          </Grid>
+          <Grid item md sm xs>
+            image
+          </Grid>
+          <Grid item md sm xs>
+            Wifi
+          </Grid>
+        </Grid>
       </Paper>
     );
   }
@@ -36,7 +42,7 @@ Amenity.propTypes = {
   app: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = ({app}) => ({
+const mapStateToProps = ({ app }) => ({
   app,
 });
 const mapDispatchToProps = dispatch =>

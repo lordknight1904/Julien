@@ -35,7 +35,7 @@ class Item extends Component {
         <Card className="cardContainer">
           <CardMedia
             className="cardMedia"
-            image='images/aokhoac.jpg'
+            image='images/download.jpeg'
           />
           <CardContent className="itemContent">
             <Typography
@@ -43,13 +43,13 @@ class Item extends Component {
               gutterBottom
               variant="display1"
             >
-              Clothes
+              Apartment
             </Typography>
             <Typography
               align="justify"
               variant="headline"
             >
-              300.000đ
+              3.000.000.000đ
             </Typography>
           </CardContent>
         </Card>

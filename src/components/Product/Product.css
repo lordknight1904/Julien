@@ -92,5 +92,11 @@
 .productAddToCardButton:hover {
     background-color: rgba(245, 0, 87, 0.08) !important;
 }
+.productDetailGrid {
+    margin-top: 5px !important;
+}
+.productDetailGrid > div {
+    text-align: left;
+}
 /* rgba(245, 0, 87, 0.08) */
 /* #f50057 */

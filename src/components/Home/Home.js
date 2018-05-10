@@ -12,13 +12,16 @@ class Home extends Component {
   componentDidMount() {
     const { app } = this.props;
     this.props.setHelmet(app.appName, app.appName);
+    if (window) {
+      window.scrollTo(0, 0);
+    }
   }
   render() {
     return (
       <div className="App" style={{ marginBottom: '20px' }}>
         <div id="homeBanner" className="homeBanner" />
         <h2>
-          Top Choices
+          Beautiful Apartments
         </h2>
         <div className="content">
           <Grid container spacing={16}>

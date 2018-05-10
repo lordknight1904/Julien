@@ -59,11 +59,16 @@ class Footer extends Component {
             sm
             xs={12}
           >
-            <h3>Register for Newsletter</h3>
+            <h3>Register for the latest Apartments</h3>
             <FormGroup>
               <InputGroup>
-                <FormControl className="" type="text" placeholder="Email" onChange={this.onEmail}
-                             value={this.state.email} />
+                <FormControl
+                  className=""
+                  type="text"
+                  placeholder="Email"
+                  onChange={this.onEmail}
+                  value={this.state.email}
+                />
                 <InputGroup.Button>
                   <Button className="footerEmailSignUp" onClick={this.onNewsLetter}>Sign Up</Button>
                 </InputGroup.Button>
