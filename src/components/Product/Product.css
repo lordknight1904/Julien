@@ -11,6 +11,7 @@
     border: 1px solid grey;
     height: 47px;
     width: 47px;
+    border-radius: 0;
 }
 .productPaper {
     padding: 0 16px;

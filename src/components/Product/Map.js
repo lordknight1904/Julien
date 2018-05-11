@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 import Paper from 'material-ui/Paper';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import './Product.css';

@@ -60,7 +60,7 @@ class Product extends Component {
                   {
                     ['images/download.jpeg', 'images/download1.jpeg', 'images/download2.jpeg'].map((src, index) => (
                       <IconButton
-                        className={`productImage ${selectedSrc === src ? 'productImageHighlight' : 'abc'}`}
+                        className={`productImage ${selectedSrc === src ? 'productImageHighlight' : ''}`}
                         key={index}
                         aria-label="images"
                         onFocus={() => this.onMouseOver(src)}
@@ -85,26 +85,26 @@ class Product extends Component {
             <Grid item md sm xs={12}>
               <Map
                 isMarkerShown
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `400px` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg&v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: '100%' }} />}
+                containerElement={<div style={{ height: '400px' }} />}
+                mapElement={<div style={{ height: '100%' }} />}
               />
             </Grid>
             <Grid item md sm xs={12}>
               <Paper elevation={2} className="productDetailPaper">
                 <Typography align="left" variant="headline" component="h3">
-                  DELIVERY & RETURNS
+                  NOTICE
                 </Typography>
                 <Table className="productTable">
                   <TableBody>
                     <TableRow>
-                      <TableCell>Dispatch</TableCell>
-                      <TableCell>Within 2 weeks</TableCell>
+                      <TableCell>Notice 1</TableCell>
+                      <TableCell>blah blah blah</TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell>Delivery</TableCell>
-                      <TableCell>$5.95</TableCell>
+                      <TableCell>Notice 2</TableCell>
+                      <TableCell>etc etc etc</TableCell>
                     </TableRow>
                   </TableBody>
                 </Table>
