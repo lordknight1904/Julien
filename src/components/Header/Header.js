@@ -57,10 +57,7 @@ class Header extends Component {
 
   render() {
     const { app, classes } = this.props;
-    let { shrink } = this.state;
-    const { pathname } = this.props.location;
-    const pathBool = pathname === '/' || pathname === '/category';
-    shrink = shrink || !pathBool;
+    const { shrink } = this.state;
     return (
       <div>
         <AppBar
