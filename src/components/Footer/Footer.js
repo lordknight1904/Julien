@@ -1,106 +1,48 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Grid from 'material-ui/Grid';
-import { connect } from 'react-redux';
+import Typography from 'material-ui/Typography';
+import Divider from 'material-ui/Divider';
+import { withStyles } from 'material-ui';
 import PropTypes from 'prop-types';
-import { FormGroup, InputGroup, FormControl, Button } from 'react-bootstrap';
-import './Footer.css';
+import footerStyle from '../../assets/jss/components/footerStyle';
 
-class Footer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: '',
-    };
-  }
-
-  onEmail = (event) => {
-    this.setState({ email: event.target.value });
-  };
-  onNewsLetter = () => {
-    this.setState({ email: '' });
-  };
-
-  render() {
-    const { app } = this.props;
-    return (
-      <footer className="content footerContainer">
-        <Grid
-          className="footer"
-          container
-          justify="center"
-          spacing={16}
-        >
-          <Grid
-            className="footerColumn"
-            item
-            md
-            sm
-            xs={12}
+function Footer({ ...props }) {
+  const { classes } = props;
+  return (
+    <footer className={`${classes.gutters} ${classes.footer}`}>
+      <Grid
+        className="footer"
+        container
+        justify="center"
+        spacing={16}
+      >
+        <Grid className={classes.footerDisclaimer} item md sm xs={12}>
+          <Typography
+            variant="caption"
+            color="inherit"
+            className={classes.disclaimer}
           >
-            <h3>About</h3>
-            <p>A bit about me</p>
-            <p>How I help you settle down!</p>
-          </Grid>
-          <Grid
-            className="footerColumn"
-            item
-            md
-            sm
-            xs={12}
-          >
-            <h3>{`@${app.appName.replace(/\s/g, '')}`}</h3>
-            <p>Facebook</p>
-            <p>Twitter</p>
-          </Grid>
-          <Grid
-            className="footerColumn"
-            item
-            md
-            sm
-            xs={12}
-          >
-            <h3>Register for the latest Apartments</h3>
-            <FormGroup>
-              <InputGroup>
-                <FormControl
-                  className=""
-                  type="text"
-                  placeholder="Email"
-                  onChange={this.onEmail}
-                  value={this.state.email}
-                />
-                <InputGroup.Button>
-                  <Button className="footerEmailSignUp" onClick={this.onNewsLetter}>Sign Up</Button>
-                </InputGroup.Button>
-              </InputGroup>
-            </FormGroup>
-          </Grid>
+            Disclaimer
+          </Typography>
         </Grid>
-        <Grid
-          className="footer"
-          container
-          justify="center"
-          spacing={16}
-        >
-          <Grid
-            className="textAlignCenter"
-            item
-            md
-            sm
-            xs
+      </Grid>
+      <Divider light classes={{ light: classes.light }} />
+      <Grid className="footer" container justify="center" spacing={16}>
+        <Grid className={classes.footerCopyright} item md sm xs>
+          <Typography
+            variant="subheading"
+            color="inherit"
+            className={classes.copyRight}
           >
-            <p>&copy; 2018 &middot; Ngo Anh Khoa &middot; Horizon Inc.</p>
-          </Grid>
+            &copy; 2018 &middot; Ngo Anh Khoa &middot; Horizon Inc.
+          </Typography>
         </Grid>
-      </footer>
-    );
-  }
+      </Grid>
+    </footer>
+  );
 }
 
 Footer.propTypes = {
-  app: PropTypes.objectOf(PropTypes.string).isRequired,
+  classes: PropTypes.object.isRequired,
 };
-const mapStateToProps = ({ app }) => ({
-  app,
-});
-export default connect(mapStateToProps)(Footer);
+export default withStyles(footerStyle)(Footer);

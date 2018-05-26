@@ -89,6 +89,7 @@ class Product extends Component {
                 loadingElement={<div style={{ height: '100%' }} />}
                 containerElement={<div style={{ height: '400px' }} />}
                 mapElement={<div style={{ height: '100%' }} />}
+                pos={{ lat: -34.397, lng: 150.644 }}
               />
             </Grid>
             <Grid item md sm xs={12}>

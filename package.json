@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
     "@material-ui/icons": "^1.0.0-beta.43",
     "classnames": "^2.2.5",
+    "google-map-react": "^1.0.3",
     "history": "^4.7.2",
     "isomorphic-fetch": "^2.2.1",
+    "lorem-ipsum": "^1.0.4",
     "material-ui": "^1.0.0-beta.43",
     "npm": "^6.0.0",
     "prop-types": "^15.6.1",
@@ -26,7 +29,7 @@
     "serve": "^6.5.6"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3002 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",

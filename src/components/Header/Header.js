@@ -2,20 +2,18 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { Link, withRouter } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
-import Drawer from 'material-ui/Drawer';
-import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import List, { ListItem, ListItemText } from 'material-ui/List';
+import Hidden from '@material-ui/core/Hidden';
+import { withStyles } from 'material-ui';
+import Button from '@material-ui/core/Button';
 import { fetchTitle } from '../../reducers/App/app';
-
-import './Header.css';
+import headerStyle from '../../assets/jss/components/headerStyle';
+import paths from '../paths';
 
 class Header extends Component {
   constructor(props) {
@@ -58,106 +56,68 @@ class Header extends Component {
   };
 
   render() {
-    const { app } = this.props;
-    const { open } = this.state;
+    const { app, classes } = this.props;
     let { shrink } = this.state;
     const { pathname } = this.props.location;
     const pathBool = pathname === '/' || pathname === '/category';
     shrink = shrink || !pathBool;
     return (
-      <div
-        id="appFrame"
-        className={
-          classNames('appFrame', {
-            // relativePosition: !this.pathBool,
-          })}
-      >
+      <div>
         <AppBar
-          className={
-            classNames({
-              appBarShift: open,
-              appBarScrolled: shrink,
-              appBarExpanded: !shrink,
-              appBarShiftLeft: open,
-            })}
-          position="static"
+          position="fixed"
+          className={classes.appbar}
         >
           <Toolbar
-            className={
-              classNames('toolBar', {
-                // toolBarScrolled: shrink,
-                // toolBarExpanded: !shrink,
-              })}
+            classes={{
+              gutters: classes.gutters,
+              root: shrink ? classes.rootExtended : '',
+            }}
           >
-            <IconButton
-              className={
-                classNames('menuButton', {
-                  // menuButtonScrolled: shrink,
-                  // menuButtonExpanded: !shrink,
-                  hide: open,
-                })}
-              color="inherit"
-              aria-label="Menu"
-              onClick={this.handleDrawerOpen}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className="flex"
-            >
-              <Link
-                to="/"
-                className="titleLink"
+            <Hidden mdUp>
+              <IconButton
+                color="inherit"
+                aria-label="Menu"
+                onClick={this.handleDrawerOpen}
               >
-                {app.appName}
-              </Link>
-            </Typography>
+                <MenuIcon />
+              </IconButton>
+            </Hidden>
+            <Hidden mdDown>
+              <Typography
+                variant="title"
+                color="inherit"
+                className="flex"
+              >
+                <Link
+                  to="/"
+                  className={classes.headerLink}
+                >
+                  {app.appName}
+                </Link>
+              </Typography>
+              {
+                paths.map((p, index) => (
+                  <Link
+                    key={index}
+                    to={p.path}
+                    className={classes.headerLink}
+                  >
+                    <Button color="default">
+                      {p.title}
+                    </Button>
+                  </Link>
+                ))
+              }
+            </Hidden>
           </Toolbar>
         </AppBar>
-        <Drawer
-          variant="persistent"
-          anchor="left"
-          open={open}
-          classes={{
-            paper: 'drawerPaper',
-          }}
-        >
-          <div className="drawerHeader">
-            <IconButton onClick={this.handleDrawerClose}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </div>
-          <Divider />
-          <List component="nav">
-            <ListItem button>
-              <ListItemText primary="Product" />
-            </ListItem>
-            <ListItem button>
-              <ListItemText primary="Sales" />
-            </ListItem>
-          </List>
-          <Divider />
-          <List component="nav">
-            <ListItem button>
-              <ListItemText primary="Trash" />
-            </ListItem>
-            <ListItem
-              button
-              component="a"
-              href="#simple-list"
-            >
-              <ListItemText primary="Spam" />
-            </ListItem>
-          </List>
-        </Drawer>
       </div>
     );
   }
 }
 
 Header.propTypes = {
+  classes: PropTypes.object.isRequired,
   app: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
 };
@@ -172,4 +132,4 @@ const mapDispatchToProps = dispatch =>
     },
     dispatch,
   );
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(withStyles(headerStyle)(Header)));
