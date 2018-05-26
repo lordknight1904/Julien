@@ -1,5 +1,5 @@
 import React from 'react';
-import Paper from 'material-ui/Paper';
+import { Paper } from '@material-ui/core';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import './Product.css';
 

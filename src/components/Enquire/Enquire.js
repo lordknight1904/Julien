@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import Grid from 'material-ui/Grid';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui';
+import { withStyles, Grid, Typography } from '@material-ui/core';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import enquireStyle from '../../assets/jss/components/enquireStyle';
 

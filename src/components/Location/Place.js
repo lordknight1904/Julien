@@ -2,15 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from 'material-ui';
+import { withStyles, Typography, Paper, Table, Grid, TableRow, TableBody, TableCell } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Table from '@material-ui/core/Table';
-import Grid from '@material-ui/core/Grid';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
 import locationStyle from '../../assets/jss/components/locationStyle';
 
 class Place extends Component {

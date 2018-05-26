@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Paper from 'material-ui/Paper';
-import Typography from 'material-ui/Typography';
-import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
+import { Table, TableBody, TableCell, TableRow, Typography, Paper } from '@material-ui/core';
 import './Product.css';
 
 class Overview extends Component {

@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
-import Card, { CardActions, CardMedia } from 'material-ui/Card';
-import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
-import IconButton from 'material-ui/IconButton';
-import Typography from 'material-ui/Typography';
+import {
+  Grid,
+  Paper,
+  Card,
+  CardActions,
+  CardMedia,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+  IconButton,
+  Typography,
+} from '@material-ui/core';
 import { fetchTitle, setHelmet } from '../../reducers/App/app';
 import './Product.css';
 import Overview from './Overview';

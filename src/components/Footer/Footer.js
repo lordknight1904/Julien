@@ -1,8 +1,5 @@
 import React from 'react';
-import Grid from 'material-ui/Grid';
-import Typography from 'material-ui/Typography';
-import Divider from 'material-ui/Divider';
-import { withStyles } from 'material-ui';
+import { withStyles, Grid, Typography, Divider } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import footerStyle from '../../assets/jss/components/footerStyle';
 

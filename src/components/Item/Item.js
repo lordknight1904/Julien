@@ -3,8 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Typography from 'material-ui/Typography';
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { fetchTitle } from '../../reducers/App/app';
 import './Item.css';
 

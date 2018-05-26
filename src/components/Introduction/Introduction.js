@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from 'material-ui';
+import { withStyles } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import introductionStyle from '../../assets/jss/components/introductionStyle';
 import Overview from './Overview';

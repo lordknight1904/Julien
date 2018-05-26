@@ -3,14 +3,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
+import { AppBar, Toolbar, Typography, IconButton, Hidden, Button, withStyles } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import IconButton from 'material-ui/IconButton';
-import Hidden from '@material-ui/core/Hidden';
-import { withStyles } from 'material-ui';
-import Button from '@material-ui/core/Button';
 import { fetchTitle } from '../../reducers/App/app';
 import headerStyle from '../../assets/jss/components/headerStyle';
 import paths from '../paths';
@@ -59,56 +53,54 @@ class Header extends Component {
     const { app, classes } = this.props;
     const { shrink } = this.state;
     return (
-      <div>
-        <AppBar
-          position="fixed"
-          className={classes.appbar}
+      <AppBar
+        position="fixed"
+        className={classes.appbar}
+      >
+        <Toolbar
+          classes={{
+            gutters: classes.gutters,
+            root: shrink ? classes.rootExtended : '',
+          }}
         >
-          <Toolbar
-            classes={{
-              gutters: classes.gutters,
-              root: shrink ? classes.rootExtended : '',
-            }}
-          >
-            <Hidden mdUp>
-              <IconButton
-                color="inherit"
-                aria-label="Menu"
-                onClick={this.handleDrawerOpen}
+          <Hidden mdUp>
+            <IconButton
+              color="inherit"
+              aria-label="Menu"
+              onClick={this.handleDrawerOpen}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
+          <Hidden mdDown>
+            <Typography
+              variant="title"
+              color="inherit"
+              className="flex"
+            >
+              <Link
+                to="/"
+                className={classes.headerLink}
               >
-                <MenuIcon />
-              </IconButton>
-            </Hidden>
-            <Hidden mdDown>
-              <Typography
-                variant="title"
-                color="inherit"
-                className="flex"
-              >
+                {app.appName}
+              </Link>
+            </Typography>
+            {
+              paths.map((p, index) => (
                 <Link
-                  to="/"
+                  key={index}
+                  to={p.path}
                   className={classes.headerLink}
                 >
-                  {app.appName}
+                  <Button color="default">
+                    {p.title}
+                  </Button>
                 </Link>
-              </Typography>
-              {
-                paths.map((p, index) => (
-                  <Link
-                    key={index}
-                    to={p.path}
-                    className={classes.headerLink}
-                  >
-                    <Button color="default">
-                      {p.title}
-                    </Button>
-                  </Link>
-                ))
-              }
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-      </div>
+              ))
+            }
+          </Hidden>
+        </Toolbar>
+      </AppBar>
     );
   }
 }

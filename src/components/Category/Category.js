@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 // import classNames from 'classnames';
-import Grid from 'material-ui/Grid';
+import { Grid } from '@material-ui/core';
 import logo from '../../logo.svg';
 import { fetchTitle } from '../../reducers/App/app';
 

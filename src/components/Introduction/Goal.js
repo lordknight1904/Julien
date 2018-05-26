@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { withStyles } from 'material-ui';
+import { withStyles, Typography, Paper } from '@material-ui/core';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
 import introductionStyle from '../../assets/jss/components/introductionStyle';
 
 class Goal extends Component {

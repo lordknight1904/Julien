@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import Grid from 'material-ui/Grid';
+import { Grid } from '@material-ui/core';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import logo from '../../images/banner.jpg';
 import '../App.css';
 import Item from '../Item/Item';
 import { fetchTitle, setHelmet } from '../../reducers/App/app';
