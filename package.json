@@ -22,10 +22,13 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "next",
     "react-scripts": "1.1.4",
+    "react-slick": "^0.23.1",
+    "react-swipeable-views": "^0.12.13",
     "redux": "^3.7.1",
     "redux-form": "7.2.3",
     "redux-thunk": "2.2.0",
-    "serve": "^6.5.6"
+    "serve": "^6.5.6",
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "PORT=3002 react-scripts start",

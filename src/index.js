@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
+import './assets/scss/material-kit-react.css';
 // import registerServiceWorker from './registerServiceWorker';
 
 import store, { history } from './store';

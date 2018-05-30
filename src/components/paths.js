@@ -7,6 +7,10 @@
 import IntroductionPage from './Introduction/Introduction';
 import HomePage from './Home/Home';
 import LocationPage from './Location/Location';
+import FacilityPage from './Facility/Facility';
+import FloorPage from './Floor/Floor';
+import DeveloperPage from './Developer/Developer';
+import ContactPage from './Contact/Contact';
 
 const paths = [
   {
@@ -28,27 +32,22 @@ const paths = [
   {
     title: 'FACILITIES',
     path: '/facilities',
-    component: IntroductionPage,
+    component: FacilityPage,
   },
   {
     title: 'FLOOR AND PLANS',
     path: '/floorandplans',
-    component: IntroductionPage,
+    component: FloorPage,
   },
   {
     title: 'DEVELOPER',
     path: '/developer',
-    component: IntroductionPage,
-  },
-  {
-    title: 'RESALE AND LEASING',
-    path: '/resaleandleasing',
-    component: IntroductionPage,
+    component: DeveloperPage,
   },
   {
     title: 'CONTACT US',
     path: '/contact',
-    component: IntroductionPage,
+    component: ContactPage,
   },
   // { redirect: true, path: '/', path: '/admin', navbarName: 'Redirect' }
 ];
